@@ -81,53 +81,11 @@ clear all;
 % legend(str1, str2, str3);
 % %% Increasing controller stiffness results in reduction in both settling time and peak amplitude in the bode plot
 
-% %% Effects on position control
-% clear all;
-% m_m=1;
-% m_l=1;
-% k=100;
-% c=2*sqrt((m_l*m_m*k)/(m_l+m_m));
-% olsys1=tf([c/(m_m*m_l) k/(m_m*m_l)],[1, ...
-%     (c*m_m+c*m_l)/(m_m*m_l),(m_m+m_l)/(m_m*m_l)*k,0,0]);
-% bode(olsys1);
-% hold on;
-% k=1000;
-% c=2*sqrt((m_l*m_m*k)/(m_l+m_m));
-% olsys1=tf([c/(m_m*m_l) k/(m_m*m_l)],[1, ...
-%     (c*m_m+c*m_l)/(m_m*m_l),(m_m+m_l)/(m_m*m_l)*k,0,0]);
-% bode(olsys1);
-
-%% Effects on disturbance with PD control applied to load position
-% tf = X_l/F_d
+%% Effects on position control
 clear all;
 m_m=1;
 m_l=1;
 k=100;
-c=2*sqrt((m_l*m_m*k)/(m_l+m_m));
-P=-1000;
-D=-100;
-sys=tf([1,c,k],[1,2*c, (2*k-c*D), (-D*k-c*P), -P*k]);
-hold on;
-bode(sys)
-
-m_m=1;
-m_l=1;
-k=1000;
-c=2*sqrt((m_l*m_m*k)/(m_l+m_m));
-P=-1000;
-D=-100;
-sys=tf([1,c,k],[1,2*c, (2*k-c*D), (-D*k-c*P), -P*k]);
-hold on;
-bode(sys)
-
-m_m=1;
-m_l=1;
-k=10000;
-c=2*sqrt((m_l*m_m*k)/(m_l+m_m));
-P=-1000;
-D=-100;
-sys=tf([1,c,k],[1,2*c, (2*k-c*D), (-D*k-c*P), -P*k]);
-hold on;
-bode(sys)
-
-legend('k=100','k=1000','k=10000');
+c=2*sqrt(())
+olsys1=tf([c/(m_m*m_l) k/(m_m*m_l)],[1, ...
+    (c*m_m+c*m_l)/(m_m*m_l),(m_m+m_l)/(m_m*m_l)*k,0,0]);
